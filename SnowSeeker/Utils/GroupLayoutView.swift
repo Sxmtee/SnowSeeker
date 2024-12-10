@@ -22,15 +22,22 @@ struct GroupLayoutView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
     var body: some View {
-        if horizontalSizeClass == .compact {
-            VStack {
-                UserView()
-            }
-        } else {
-            HStack {
-                UserView()
-            }
+        ViewThatFits {
+            Rectangle()
+                .frame(width: 500, height: 200)
+
+            Circle()
+                .frame(width: 200, height: 200)
         }
+//        if horizontalSizeClass == .compact {
+//            VStack {
+//                UserView()
+//            }
+//        } else {
+//            HStack {
+//                UserView()
+//            }
+//        }
     }
 }
 
